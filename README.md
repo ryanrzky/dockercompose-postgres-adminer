@@ -1,7 +1,7 @@
 # Install Postgres dan Adminer Menggunakan Docker Compose
 
 #### Cara Menggunakan
-1. Buat Direktory `database-data`
+1. Buat Direktory `postgres-data`
 2. Ganti Value
     ```
     POSTGRES_PASSWORD:
