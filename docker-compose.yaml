@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   postgres:
-    image: postgres
+    image: 'postgres:16.8'
     restart: always
     ports:
       - 5432:5432
@@ -13,13 +13,13 @@ services:
       POSTGRES_USER: userstart
       POSTGRES_DB: db_start
     volumes:
-      - ./postgres-data:/var/lib/postgresql/data
+      - postgres-data:/var/lib/postgresql/data
       - ./postgres-conf:/etc/postgresql
     networks:
       - db-net
 
   adminer:
-    image: adminer
+    image: 'adminer:5.0.6'
     restart: always
     ports:
       - 8080:8080
@@ -28,3 +28,6 @@ services:
 
 networks:
   db-net:
+
+volumes:
+  postgres-data:
